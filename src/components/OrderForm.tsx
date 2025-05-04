@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useOrder } from '../hooks/useOrder';
 import { Clock, AlertCircle, ChefHat, Truck, Timer, Check } from 'lucide-react';
 
-// simple 5-hour check
 const FIVE_HOURS = 5 * 60 * 60 * 1000;
 
 const OrderForm: React.FC = () => {
@@ -10,7 +9,6 @@ const OrderForm: React.FC = () => {
   const [error, setError] = useState('');
   const [isValid, setIsValid] = useState(false);
 
-  // Format readable time for display
   const getReadableTime = () => {
     if (!deliveryTime) return '';
     
@@ -45,7 +43,6 @@ const OrderForm: React.FC = () => {
     validateTime(t);
   };
 
-  // Validate on component mount
   useEffect(() => {
     if (deliveryTime) {
       validateTime(deliveryTime);
