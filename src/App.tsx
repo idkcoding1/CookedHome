@@ -1,15 +1,22 @@
-import Home from "./components/Home";
-import AddtoCart from "./components/AddtoCart";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CheckoutPage from "./pages/CheckOut";
+import { OrderProvider } from "./context/OrderContext";
+import HomePage from "./pages/Home";
+import ReceiptPage from "./pages/Receipt";
 
 function App() {
   return (
-    <BrowserRouter>
+    <OrderProvider>
+      <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/" element={<AddtoCart />} />
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/receipt" element={<ReceiptPage />} />
+     
       </Routes>
     </BrowserRouter>
+    </OrderProvider>
   );
 }
 

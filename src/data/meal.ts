@@ -8,26 +8,24 @@ export interface Meal {
     category: string;
   }
   
-  // Function to get today's meals
   export const getTodaysMeals = (): Meal[] => {
-    // In a real application, this would come from an API
-    const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
     
-    // Different meals for different days of the week
+    const today = new Date().getDay(); 
+    
     switch(today) {
-      case 1: // Monday
+      case 1: 
         return mondayMeals;
-      case 2: // Tuesday
+      case 2: 
         return tuesdayMeals;
-      case 3: // Wednesday
+      case 3: 
         return wednesdayMeals;
-      case 4: // Thursday
+      case 4: 
         return thursdayMeals;
-      case 5: // Friday
+      case 5: 
         return fridayMeals;
-      case 6: // Saturday
+      case 6: 
         return saturdayMeals;
-      default: // Sunday
+      default:
         return sundayMeals;
     }
   };
