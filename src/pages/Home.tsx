@@ -5,6 +5,7 @@ import MealCard from '../components/MealCard';
 import OrderForm from '../components/OrderForm';
 import { useMenu } from '../hooks/useMenu';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const HomePage: React.FC = () => {
   const { menu, loading } = useMenu();
@@ -34,7 +35,7 @@ const HomePage: React.FC = () => {
         </div>
         
         <OrderForm />
-     
+        <Footer/>
       </main>
     </div>
   );

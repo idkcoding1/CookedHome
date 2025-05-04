@@ -17,7 +17,6 @@ const MealCard: React.FC<Props> = ({ meal }) => {
   
   const addToCart = () => {
     addItem({ item: meal, quantity });
-    // Optional: Add a small animation or feedback when adding to cart
   };
 
   return (
