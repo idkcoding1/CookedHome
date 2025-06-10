@@ -34,7 +34,7 @@ const ReceiptPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50">
       <div className="container mx-auto px-4 py-12 max-w-3xl">
-        {/* Header with success message */}
+       
         <div className="bg-gradient-to-r from-teal-600 to-indigo-600 rounded-lg shadow-lg mb-8 p-6 flex items-center">
           <div className="bg-white p-3 rounded-full mr-4">
             <CheckCircle size={32} className="text-purple-600" />
@@ -45,8 +45,7 @@ const ReceiptPage: React.FC = () => {
           </div>
         </div>
         
-        {/* Order Items Section */}
-        <div className="bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+         <div className="bg-white rounded-lg shadow-md mb-6 overflow-hidden">
           <div className="bg-indigo-500 px-6 py-4 flex items-center">
             <ShoppingBag size={22} className="text-indigo-100 mr-2" />
             <h2 className="text-xl font-semibold text-white">Order Details</h2>

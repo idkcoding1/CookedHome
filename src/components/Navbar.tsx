@@ -9,7 +9,7 @@ const Navbar: React.FC = () => (
         <img 
           src="/assets/images/logo.png" 
           alt="HomeCook Logo"
-          className="w-24 h-auto" // Adjust width here (e.g., w-16 or w-24)
+          className="w-24 h-auto" 
         />
       </Link>
       <Link to="/checkout" className="text-blue-600">

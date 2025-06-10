@@ -1,4 +1,4 @@
-// src/components/CheckoutSummary.tsx
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';      // ← v6
 import { useOrder } from '../hooks/useOrder';
@@ -19,7 +19,7 @@ const CheckoutSummary: React.FC = () => {
     address.trim().length > 0;
 
   const onPlace = () => {
-    // (optional) await submitOrder(...)
+
     clearOrder();
     navigate('/receipt', {
       state: { items, deliveryTime, address } as {

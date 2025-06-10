@@ -13,7 +13,6 @@ function App() {
         <Route path="/" element={<HomePage/>} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/receipt" element={<ReceiptPage />} />
-     
       </Routes>
     </BrowserRouter>
     </OrderProvider>

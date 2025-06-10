@@ -10,7 +10,7 @@ import React, {
   
   export interface CartItem {
     meal: Meal;
-    quantity: number; // number of persons
+    quantity: number; 
   }
   
   interface CartContextType {

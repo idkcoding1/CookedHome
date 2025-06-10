@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
-import { Meal } from '../data/meal';
 import { useOrder } from '../hooks/useOrder';
 import { PlusCircle, MinusCircle, ShoppingCart } from 'lucide-react';
 
-interface Props { 
-  meal: Meal 
+interface MealCardProps {
+  meal: {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    servingSize: number;
+    image: string;
+    category: string;
+  };
 }
 
-const MealCard: React.FC<Props> = ({ meal }) => {
+const MealCard: React.FC<MealCardProps> = ({ meal }) => {
   const { addItem } = useOrder();
   const [quantity, setQuantity] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
 
-  const incrementQuantity = () => setQuantity(prev => prev + 1);
-  const decrementQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
+  const increaseQuantity = () => {
+    setQuantity(prev => prev + 1);
+  };
+
+  const decreaseQuantity = () => {
+    setQuantity(prev => (prev > 1 ? prev - 1 : 1));
+  };
   
   const addToCart = () => {
     addItem({ item: meal, quantity });
@@ -55,7 +67,7 @@ const MealCard: React.FC<Props> = ({ meal }) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-1">
             <button 
-              onClick={decrementQuantity}
+              onClick={decreaseQuantity}
               className="text-gray-500 hover:text-blue-500 focus:outline-none transition-colors"
             >
               <MinusCircle size={20} />
@@ -68,7 +80,7 @@ const MealCard: React.FC<Props> = ({ meal }) => {
               className="border rounded w-12 p-1 text-center mx-1 bg-white"
             />
             <button 
-              onClick={incrementQuantity}
+              onClick={increaseQuantity}
               className="text-gray-500 hover:text-blue-500 focus:outline-none transition-colors"
             >
               <PlusCircle size={20} />
